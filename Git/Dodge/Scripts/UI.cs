@@ -7,13 +7,21 @@ using UnityEngine.SceneManagement;
 public class UI : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI bestScoreText;
+    public TextMeshProUGUI endResultText;
     public GameObject endPanel;
-    private float score = 0;
+    public float bestScore;
+    private const string BestScoreKey = "BestScore";
+
+    public float score = 0;
     private float timer = 0f;
 
     void Start()
     {
+
+        endResultText.text = $"Score : {score}\nGold : {score}";
         endPanel.SetActive(false);
+        bestScore = PlayerPrefs.GetFloat(BestScoreKey, 0);
     }
 
     // Update is called once per frame
@@ -21,7 +29,8 @@ public class UI : MonoBehaviour
     {
         timer += Time.deltaTime;
         score = timer;
-        scoreText.text = $"Score: {Mathf.FloorToInt(score)}";
+        scoreText.text = $"Score : {Mathf.FloorToInt(score)}";
+        bestScoreText.text = $"Best : {Mathf.FloorToInt(bestScore)}";
         score = Mathf.FloorToInt(score);
     }
 
@@ -33,7 +42,18 @@ public class UI : MonoBehaviour
 
     public void Exit()
     {
-        SceneManager.LoadScene("Home");
+        SceneManager.LoadScene("DodgeStart");
+        Time.timeScale = 1.0f;
+    }
+
+    public void UpdateScore()
+    {
+        if( score > bestScore)
+        {
+            bestScore = score;
+
+            PlayerPrefs.SetFloat(BestScoreKey, bestScore);
+        }
     }
 
 

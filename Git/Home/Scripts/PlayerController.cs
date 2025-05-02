@@ -6,10 +6,10 @@ public class PlayerController : BaseController
 {
     
     private Camera playerCamera;
+
     
 
 
-    
     protected override void Start()
     {
         base.Start();

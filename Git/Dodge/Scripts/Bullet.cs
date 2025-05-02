@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public float angle = 0f;
     private Vector2 moveDirection;
     Rigidbody2D rb;
+    UI ui;
 
     public enum Spawn
     {
@@ -51,45 +52,68 @@ public class Bullet : MonoBehaviour
 
         transform.position = spawnPosition;
 
-        
         float randomAngle = Random.Range(-angle, angle);
         Quaternion rotation = Quaternion.Euler(0, 0, randomAngle);
         moveDirection = rotation * initialDirection;
 
-        
         if (rb != null)
         {
             rb.velocity = moveDirection * speed;
         }
-
-
     }
-
-
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
-        Debug.Log(collision.transform.position);
-
-        if (collision.CompareTag("Player"))
+        Debug.Log("Collision" + collision.gameObject.name);
+        if (collision.gameObject.CompareTag("Player"))
         {
             DodgeManager.Instance.GameOver();
+        }
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
         }
     }
 
 
-
-    //private void OnTriggerEnter2D(Collider2D collision)
+    //private void OnCollisionEnter2D(Collision2D collision)
     //{
     //    Debug.Log("Collision" + collision.gameObject.name);
+    //    Debug.Log(collision.transform.position);
+
     //    if (collision.gameObject.CompareTag("Player"))
     //    {
     //        DodgeManager.Instance.GameOver();
-    //        Debug.Log("???");
     //    }
+    //}
 
+    //private void OnCollisionEnter2D(Collider2D collision)
+    //{
+
+    //}
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    Debug.Log("Trigger" + collision.gameObject.name);
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        ui.score++;
+    //    }
+    //    if (collision.gameObject.CompareTag("Wall"))
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
+
+
+
+
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        ui.score++;
+    //        hasScored = true;
+    //    }
     //    if (collision.gameObject.CompareTag("Wall"))
     //    {
     //        Destroy(gameObject);

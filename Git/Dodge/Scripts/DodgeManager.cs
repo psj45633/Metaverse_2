@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class DodgeManager : MonoBehaviour
 {
@@ -14,11 +15,14 @@ public class DodgeManager : MonoBehaviour
     
     UI ui;
     
+    
 
     public float leftSpawnX = -18f;
     public float rightSpawnX = 18f;
     public float topSpawnY = 10f;
     public float bottomSpawnY = -10f;
+
+
 
     private void Awake()
     {
@@ -65,9 +69,25 @@ public class DodgeManager : MonoBehaviour
 
     public void GameOver()
     {
+        ui.UpdateScore();
         ui.endPanel.SetActive(true);
+        ui.endResultText.text = $"Score : {ui.score}\nGold : {ui.score}";
         Time.timeScale = 0f;
+
+        //ui.bestScoreText;
+        //if (PlayerPrefs.HasKey("ui.bestScoreText"))
+        //{
+        //    float best = PlayerPrefs.GetFloat("ui.bestScoreText");
+        //    if(best < ui.score)
+        //    {
+        //        PlayerPrefs.SetFloat("ui.bestScoreText", ui.score);
+        //        ui.bestScoreText = (string)Mathf.FloorToInt(ui.score).;
+        //    }
+        //}
         
+
+
+
 
     }
 
