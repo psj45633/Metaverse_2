@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour
 {
+    
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI endResultText;
     public GameObject endPanel;
     public float bestScore;
-    private const string BestScoreKey = "BestScore";
+    public const string BestScoreKey = "DodgeBestScore";
 
     public float score = 0;
     private float timer = 0f;

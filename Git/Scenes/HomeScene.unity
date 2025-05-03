@@ -3428,7 +3428,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1104770684}
   - component: {fileID: 1104770683}
-  - component: {fileID: 1104770685}
   m_Layer: 0
   m_Name: FlappyReaderBoard
   m_TagString: Untagged
@@ -3496,28 +3495,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104770682}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.5, y: 27.4, z: 0}
   m_LocalScale: {x: 1.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 352332186}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1742970516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1104770685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104770682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d26af828c304a3947a4a2a513e032c18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dodge: {fileID: 0}
-  Flappy: {fileID: 0}
 --- !u!1 &1184014722
 GameObject:
   m_ObjectHideFlags: 0
@@ -4928,7 +4913,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1290953922}
   - component: {fileID: 1290953921}
-  - component: {fileID: 1290953923}
   m_Layer: 0
   m_Name: DodgeReaderBoard
   m_TagString: Untagged
@@ -4996,28 +4980,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290953920}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.5, y: 27.4, z: 0}
   m_LocalScale: {x: 1.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1242499497}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1742970516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1290953923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1290953920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d26af828c304a3947a4a2a513e032c18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dodge: {fileID: 1184014724}
-  Flappy: {fileID: 0}
 --- !u!1 &1406925129
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,7 +5171,7 @@ GameObject:
   - component: {fileID: 1447685465}
   - component: {fileID: 1447685467}
   - component: {fileID: 1447685469}
-  - component: {fileID: 1447685468}
+  - component: {fileID: 1447685470}
   m_Layer: 0
   m_Name: SpriteRenderer
   m_TagString: Untagged
@@ -5342,18 +5312,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1447685468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447685463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 189efbac78b91aa4db5a16fd31b5ed37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1447685469
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5399,6 +5357,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1447685470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447685463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b069aa2bf8471438d2230918038a43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1453058803
 GameObject:
   m_ObjectHideFlags: 0
@@ -5787,6 +5757,54 @@ Transform:
   - {fileID: 2089483412}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1742970514
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742970516}
+  - component: {fileID: 1742970515}
+  m_Layer: 0
+  m_Name: ReaderBoard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1742970515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742970514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26af828c304a3947a4a2a513e032c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dodge: {fileID: 1184014724}
+  Flappy: {fileID: 1406925131}
+--- !u!4 &1742970516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742970514}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1290953922}
+  - {fileID: 1104770684}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1976737932
 GameObject:
   m_ObjectHideFlags: 0
@@ -6107,5 +6125,4 @@ SceneRoots:
   - {fileID: 1475041671}
   - {fileID: 424845196}
   - {fileID: 1713928230}
-  - {fileID: 1290953922}
-  - {fileID: 1104770684}
+  - {fileID: 1742970516}
