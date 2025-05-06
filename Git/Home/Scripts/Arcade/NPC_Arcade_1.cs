@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class NPC_Arcade_1 : NPCInteraction
 {
+    public GameObject conversation;
+
+
+
     protected override void OnTriggerStay2D(Collider2D collision)
     {
         base.OnTriggerStay2D(collision);
@@ -14,8 +18,19 @@ public class NPC_Arcade_1 : NPCInteraction
             if (Input.GetKey(KeyCode.Space))
             {
                 Debug.Log("interaction");
-                SceneManager.LoadScene("DodgeStart");
+                conversation.gameObject.SetActive(true);
+                //SceneManager.LoadScene("DodgeStart");
             }
         }
+    }
+
+    public void PlayDodge()
+    {
+        SceneManager.LoadScene("DodgeStart");
+    }
+
+    public void NoAnswer()
+    {
+        conversation.gameObject.SetActive(false);
     }
 }
