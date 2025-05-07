@@ -7,37 +7,30 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
-public class DodgeManager : MonoBehaviour
+public class GameManager_Dodge : MonoBehaviour
 {
-    public static DodgeManager Instance;
+    public static GameManager_Dodge Instance;
     public GameObject bulletPrefab;
     public float spawnInterval = 0.05f;
-    
-    UI ui;
-    
-    
+
+    UI_Dodge ui;
 
     public float leftSpawnX = -18f;
     public float rightSpawnX = 18f;
     public float topSpawnY = 10f;
     public float bottomSpawnY = -10f;
 
-
-
     private void Awake()
     {
         Time.timeScale = 1f;
         Instance = this;
-        ui = FindObjectOfType<UI>();
+        ui = FindObjectOfType<UI_Dodge>();
         if (ui == null) Debug.Log("null");
-        
     }
     void Start()
     {
         InvokeRepeating("MakeBullet", 0f, spawnInterval);
     }
-
-    
 
     private void MakeBullet()
     {
@@ -71,7 +64,7 @@ public class DodgeManager : MonoBehaviour
     {
         ui.UpdateScore();
         ui.endPanel.SetActive(true);
-        ui.endResultText.text = $"Score : {ui.score}\nGold : {ui.score}";
+        ui.endResultText.text = $"Score : {ui.score}";
         Time.timeScale = 0f;
 
         //ui.bestScoreText;
@@ -84,10 +77,6 @@ public class DodgeManager : MonoBehaviour
         //        ui.bestScoreText = (string)Mathf.FloorToInt(ui.score).;
         //    }
         //}
-        
-
-
-
 
     }
 

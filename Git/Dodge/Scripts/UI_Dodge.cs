@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UI : MonoBehaviour
+public class UI_Dodge : MonoBehaviour
 {
     
     public TextMeshProUGUI scoreText;

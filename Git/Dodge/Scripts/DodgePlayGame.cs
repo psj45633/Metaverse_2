@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class DodgePlayGame : MonoBehaviour
 {
-    
-
     public void Play()
     {
         SceneManager.LoadScene("Dodge");

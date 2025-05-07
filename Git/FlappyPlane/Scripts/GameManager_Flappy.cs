@@ -27,7 +27,6 @@ public class GameManager_Flappy : MonoBehaviour
     {
         uiManager.UpdateScore(0);
         bestScore = PlayerPrefs.GetInt(BestScoreKey, 0);
-
     }
 
 
@@ -52,9 +51,6 @@ public class GameManager_Flappy : MonoBehaviour
         currentScore += score;
         Debug.Log("Score :"+currentScore);
         
-        uiManager.UpdateScore(currentScore);
-
-
-        
+        uiManager.UpdateScore(currentScore); 
     }
 }

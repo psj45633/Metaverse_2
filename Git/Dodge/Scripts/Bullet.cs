@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public float angle = 0f;
     private Vector2 moveDirection;
     Rigidbody2D rb;
-    UI ui;
+    UI_Dodge ui;
 
     public enum Spawn
     {
@@ -66,7 +66,7 @@ public class Bullet : MonoBehaviour
         Debug.Log("Collision" + collision.gameObject.name);
         if (collision.gameObject.CompareTag("Player"))
         {
-            DodgeManager.Instance.GameOver();
+            GameManager_Dodge.Instance.GameOver();
         }
 
         if (collision.gameObject.CompareTag("Wall"))

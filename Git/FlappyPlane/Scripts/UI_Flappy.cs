@@ -11,7 +11,6 @@ public class UI_Flappy : MonoBehaviour
 
     GameManager_Flappy gameManager;
 
-
     void Start()
     {
         gameManager = GameManager_Flappy.Instance;
@@ -21,7 +20,6 @@ public class UI_Flappy : MonoBehaviour
         restartText.gameObject.SetActive(false);
         gameManager.bestScore = PlayerPrefs.GetInt("FlappyBestScore", 0);
         bestScoreText.text = $"Best : {gameManager.bestScore.ToString()}";
-
     }
 
     public void SetRestart()
@@ -30,12 +28,7 @@ public class UI_Flappy : MonoBehaviour
     }
 
     public void UpdateScore(int score)
-    {
-        
+    {     
         scoreText.text = score.ToString();
-
-        Debug.Log("Game Over");
-
-
     }
 }
