@@ -14,4 +14,8 @@ public class FlappyPlanePlayGame : MonoBehaviour
     {
         SceneManager.LoadScene("HomeScene");
     }
+    public void ExitStartScene()
+    {
+        SceneManager.LoadScene("FlappyPlaneStart");
+    }
 }

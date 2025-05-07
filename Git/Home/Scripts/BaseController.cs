@@ -7,6 +7,7 @@ public class BaseController : MonoBehaviour
     protected Rigidbody2D _rigidbody; // 이동을 위한 물리 컴포넌트
 
     [SerializeField] private SpriteRenderer characterRenderer; // 좌우 반전을 위한 렌더러
+    [SerializeField] private SpriteRenderer ridingRenderer; // 좌우 반전을 위한 렌더러
     [SerializeField] private Transform weaponPivot; // 무기를 회전시킬 기준 위치
 
     protected Vector2 movementDirection = Vector2.zero; // 현재 이동 방향
@@ -82,6 +83,7 @@ public class BaseController : MonoBehaviour
 
         
         characterRenderer.flipX = isLeft;
+        ridingRenderer.flipX = isLeft;
 
         if (weaponPivot != null)
         {

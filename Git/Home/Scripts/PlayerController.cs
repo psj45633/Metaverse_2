@@ -1,30 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class PlayerController : BaseController
 {
-
     private Camera playerCamera;
     public GameObject riding;
-
-
 
     protected override void Start()
     {
         base.Start();
         playerCamera = Camera.main;
     }
-
-    //private void Update()
-    //{
-
-    //    if (Input.GetKeyDown(KeyCode.G))
-    //    {
-    //        riding.gameObject.SetActive(!riding.gameObject.activeSelf);
-    //    }
-    //}
-
 
     protected override void HandleAction()
     {
@@ -64,6 +52,7 @@ public class PlayerController : BaseController
             direction *= 10f;
             _rigidbody.velocity = direction;
         }
-
     }
+
+    
 }
