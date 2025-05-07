@@ -1,33 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class FollowCamera : MonoBehaviour
+public class FollowCamera1 : MonoBehaviour
 {
     public Transform target;
-    float offSetX;
-    float offSetY;
+    float offsetX;
 
     void Start()
     {
         if (target == null) return;
+        offsetX = transform.position.x - target.position.x;
 
-        offSetX = transform.position.x - target.position.x;
-        offSetY = transform.position.y - target.position.y;
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         if (target == null) return;
 
         Vector3 pos = transform.position;
-
-        pos.x = target.position.x + offSetX;
-        pos.y = target.position.y + offSetY;
+        pos.x = target.position.x + offsetX;
         transform.position = pos;
     }
 }
-
-
